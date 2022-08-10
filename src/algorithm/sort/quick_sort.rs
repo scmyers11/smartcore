@@ -60,34 +60,24 @@ impl<T: Float> QuickArgSort for Vec<T> {
                     self.swap(l, l + 1);
                     index.swap(l, l + 1);
                 }
-                let mut i = l + 2;
+                let mut i = l + 1;
                 let mut j = ir;
                 let a = self[l + 1];
                 let b = index[l + 1];
                 loop {
                     loop {
-                        println!("{}: {}", i, self.len());
+                        i += 1;
                         if self[i] >= a {
                             break;
                         }
-                        if i == self.len() - 1 {
-                            break;
-                        }
-                        i += 1;
                     }
                     loop {
+                        j -= 1;
                         if self[j] <= a {
                             break;
                         }
-                        if j == 0 {
-                            break;
-                        }
-                        j -= 1;
                     }
                     if j < i {
-                        break;
-                    }
-                    if i > self.len() || j > self.len() {
                         break;
                     }
                     self.swap(i, j);
