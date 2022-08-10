@@ -70,6 +70,7 @@ impl<T: Float> QuickArgSort for Vec<T> {
                         if i > self.len() {
                             break;
                         }
+                        println!("{}", i);
                         if self[i] >= a {
                             break;
                         }
