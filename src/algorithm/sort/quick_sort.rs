@@ -60,7 +60,7 @@ impl<T: Float> QuickArgSort for Vec<T> {
                     self.swap(l, l + 1);
                     index.swap(l, l + 1);
                 }
-                let mut i = l + 1;
+                let mut i = l + 2;
                 let mut j = ir;
                 let a = self[l + 1];
                 let b = index[l + 1];
