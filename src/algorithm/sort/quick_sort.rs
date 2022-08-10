@@ -66,23 +66,23 @@ impl<T: Float> QuickArgSort for Vec<T> {
                 let b = index[l + 1];
                 loop {
                     loop {
-                        i += 1;
-                        if i >= self.len() {
-                            break;
-                        }
                         println!("{}: {}", i, self.len());
                         if self[i] >= a {
                             break;
                         }
-                    }
-                    loop {
-                        j -= 1;
-                        if j > self.len() {
+                        if i == self.len() - 1 {
                             break;
                         }
+                        i += 1;
+                    }
+                    loop {
                         if self[j] <= a {
                             break;
                         }
+                        if j == 0 {
+                            break;
+                        }
+                        j -= 1;
                     }
                     if j < i {
                         break;
