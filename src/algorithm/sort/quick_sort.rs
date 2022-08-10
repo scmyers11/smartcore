@@ -87,10 +87,11 @@ impl<T: Float> QuickArgSort for Vec<T> {
                     if j < i {
                         break;
                     }
-                    if i < self.len() && j < self.len() {
-                        self.swap(i, j);
-                        index.swap(i, j);
+                    if i > self.len() || j > self.len() {
+                        break;
                     }
+                    self.swap(i, j);
+                    index.swap(i, j);
                 }
                 self[l + 1] = self[j];
                 self[j] = a;
