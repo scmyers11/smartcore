@@ -67,7 +67,7 @@ impl<T: Float> QuickArgSort for Vec<T> {
                 loop {
                     loop {
                         i += 1;
-                        if self[i] >= a {
+                        if i < self.le() && self[i] >= a {
                             break;
                         }
                     }
